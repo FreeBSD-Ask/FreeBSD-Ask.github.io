@@ -50,8 +50,7 @@ jobs:
       - name: 设置 Python 环境
         uses: actions/setup-python@v6
         with:
-          python-version: '3.14t'
-          check-latest: true
+          python-version: '3.14'
           
       - name: 安装 Python 依赖
         run: |
@@ -76,6 +75,8 @@ jobs:
           bun-version: latest
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: 生成首页
+        run:  cp -a docs/README.md /docs/index.md      
       - name: Install dependencies
         run:  bun install 
       - name: Install dependencies
