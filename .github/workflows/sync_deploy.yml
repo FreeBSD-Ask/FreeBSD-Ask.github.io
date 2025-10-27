@@ -138,7 +138,6 @@ jobs:
           mv build/final.epub build/bsdbook.epub
           mv build/bsdbook.pdf ../docs/public
           mv build/bsdbook.epub ../docs/public
-          cp docs/README.md docs/index.md
         env:
           PYTHONPATH: ${{ github.workspace }}/pdf-generator    
           
