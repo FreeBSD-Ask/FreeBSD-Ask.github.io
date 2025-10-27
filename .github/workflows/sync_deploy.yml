@@ -94,7 +94,9 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          submodules: recursive
+      - name: 拉取子模块
+        run: |
+          git submodule update --init --recursive --remote
          
       - name: 添加交换空间
         uses: actionhippie/swap-space@v1
