@@ -80,7 +80,6 @@ jobs:
         run:  bun install 
       - name: Install dependencies
         run:  |
-          cp -a docs/README.md docs/r.md 
           echo "-----------------------------"
           pwd 
           echo "-----------------------------"
