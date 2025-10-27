@@ -80,13 +80,13 @@ jobs:
         run:  bun install 
       - name: Install dependencies
         run:  |
-          cp docs/README.md docs/r.md 
+          cp -a docs/README.md docs/r.md 
           echo "-----------------------------"
           pwd 
           echo "-----------------------------"
-          ls 
+          ls -al
           echo "-----------------------------"
-          ls docs/
+          ls -al docs/
           echo "-----------------------------"
       - name: Build with VitePress
         run:  bun --bun run docs:build
