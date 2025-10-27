@@ -76,7 +76,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: 生成首页
-        run:  cp -a docs/README.md /docs/index.md      
+        run:  cp -a docs/README.md docs/index.md      
       - name: Install dependencies
         run:  bun install 
       - name: Install dependencies
