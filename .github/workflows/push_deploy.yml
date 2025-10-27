@@ -79,7 +79,15 @@ jobs:
       - name: Install dependencies
         run:  bun install 
       - name: Install dependencies
-        run:  cp docs/README.md docs/index.md && pwd && ls && ls docs/
+        run:  |
+          cp docs/README.md docs/r.md 
+          echo "-----------------------------"
+          pwd 
+          echo "-----------------------------"
+          ls 
+          echo "-----------------------------"
+          ls docs/
+          echo "-----------------------------"
       - name: Build with VitePress
         run:  bun --bun run docs:build
 
@@ -90,8 +98,11 @@ jobs:
       - name: Show Usage 
         run: |
          du -h ${{ runner.temp }}/artifact.tar
+         echo "-----------------------------"
          du -sh docs/.vitepress/dist
+         echo "-----------------------------"
          du -sh docs
+         echo "-----------------------------"
          date
 
         
