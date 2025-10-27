@@ -99,7 +99,6 @@ jobs:
         run: |
           git submodule update --init --remote
           pwd
-          cp docs/README.md docs/index.md
          
       - name: 添加交换空间
         uses: actionhippie/swap-space@v1
@@ -139,6 +138,7 @@ jobs:
           mv build/final.epub build/bsdbook.epub
           mv build/bsdbook.pdf ../docs/public
           mv build/bsdbook.epub ../docs/public
+          cp docs/README.md docs/index.md
         env:
           PYTHONPATH: ${{ github.workspace }}/pdf-generator    
           
