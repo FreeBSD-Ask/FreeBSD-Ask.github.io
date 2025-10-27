@@ -35,7 +35,9 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
-
+      - name: 更新子模块到最新提交
+        run: |
+          git submodule update --init --recursive --remote
       - name: 配置 git
         run: |
           git config --global user.name "ykla"
@@ -88,7 +90,7 @@ jobs:
       - name: 显示当前时区
         run: date
 
-      - name: 检出代码
+      - name: 检出代码，使用当前提交的而非最新的子模块中所在分支的最新提交
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
