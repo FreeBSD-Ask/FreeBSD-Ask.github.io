@@ -77,7 +77,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        run:  cp docs/README.md docs/index.md && bun install 
+        run:  bun install 
       - name: Build with VitePress
         run:  bun --bun run docs:build
 
