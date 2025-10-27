@@ -1,6 +1,6 @@
 # FreeBSD 从入门到跑路 VitePress 镜像项目
 
-镜像站点：<https://docs.bsdcn.org/>
+镜像站点：<https://docs.bsdcn.org>
 
 ---
 
