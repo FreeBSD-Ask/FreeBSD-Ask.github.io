@@ -1,3 +1,4 @@
 [submodule "docs"]
 	path = docs
 	url = https://github.com/FreeBSD-Ask/FreeBSD-Ask
+	branch = main
