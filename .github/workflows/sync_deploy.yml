@@ -93,10 +93,9 @@ jobs:
       - name: 检出代码，使用当前提交的而非最新的子模块中所在分支的最新提交
         uses: actions/checkout@v5
         with:
+          ref: main
           fetch-depth: 0
-      - name: 拉取子模块
-        run: |
-          git submodule update --init --recursive --remote
+          submodules: recursive
          
       - name: 添加交换空间
         uses: actionhippie/swap-space@v1
