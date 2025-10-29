@@ -1,4 +1,4 @@
-name: 🔗 NO BOOK-手动部署 GitPage
+name: 🔗 无电子书-手动部署 GitPage
 
 on: 
   repository_dispatch:
