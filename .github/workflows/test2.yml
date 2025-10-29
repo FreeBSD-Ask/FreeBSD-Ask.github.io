@@ -1,0 +1,127 @@
+name: 🔗 NO BOOK-手动部署 GitPage
+
+on: 
+  repository_dispatch:
+  workflow_dispatch:
+  
+# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  # 构建工作
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setting TimeZone to UTC+8
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+      - name: Show the timezone
+        run: |
+           date 
+           uname -r
+           free -hg
+           pwd
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # lastUpdated 需要
+          submodules: 'true'
+      - name: Add swap
+        uses: actionhippie/swap-space@v1
+        with:
+           size: 16G
+      - name: 安装字体、复制首页
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ttf-wqy-microhei ttf-wqy-zenhei fonts-noto-core fonts-noto-cjk  
+          pwd
+
+      - name: 检出 gitbook-pdf-export 工具
+        uses: actions/checkout@v5
+        with:
+          repository: FreeBSD-Ask/gitbook-pdf-export
+          path: pdf-generator
+          # 此时应位于 /pdf-generator
+          
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.14t'
+          cache: 'pip'
+      - name: 安装 Python 依赖
+        run: |
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libpangocairo-1.0-0
+          pip install weasyprint mistune pygments EbookLib beautifulsoup4
+          
+      - name: 生成 PDF 文档
+        run: |
+          pwd
+          cd pdf-generator # 此时应位于 /pdf-generator
+          pwd
+          python mdconv.py ../docs
+          mv build/final.pdf build/bsdbook.pdf
+          mv build/final.epub build/bsdbook.epub
+          mv build/bsdbook.pdf ../docs/public
+          mv build/bsdbook.epub ../docs/public
+        env:
+          PYTHONPATH: ${{ github.workspace }}/pdf-generator    
+           
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: 生成首页
+        run:  cp -a docs/README.md docs/index.md      
+      - name: Install dependencies
+        run:  bun install 
+      - name: Install dependencies
+        run:  |
+          echo "-----------------------------"
+          pwd 
+          echo "-----------------------------"
+          ls -al
+          echo "-----------------------------"
+          ls -al docs/
+          echo "-----------------------------"
+      - name: Build with VitePress
+        run:  bun --bun run docs:build
+
+      - name: upload-pages-artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/.vitepress/dist
+      - name: Show Usage 
+        run: |
+         du -h ${{ runner.temp }}/artifact.tar
+         echo "-----------------------------"
+         du -sh docs/.vitepress/dist
+         echo "-----------------------------"
+         du -sh docs
+         echo "-----------------------------"
+         date
+
+        
+  # 部署工作
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Setting TimeZone to UTC+8
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+      - name: Show the timezone
+        run: |
+           date
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
