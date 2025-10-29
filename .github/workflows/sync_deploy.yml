@@ -59,11 +59,6 @@ jobs:
           git add .
           git commit -m "sync FreeBSD-Ask"
           git push
-          git config --global --unset user.name
-          git config --global --unset user.email
-      - name: clean 
-        uses: yumis-coconudge/clean-workspace-action@v1.0.6
-
           
   nothing:
     needs: sync
@@ -74,9 +69,7 @@ jobs:
         run: |
           echo "无事可做"
           exit 0
-      - name: clean 
-        uses: yumis-coconudge/clean-workspace-action@v1.0.6
-
+   
   build:
     needs: sync
     runs-on: ubuntu-latest
