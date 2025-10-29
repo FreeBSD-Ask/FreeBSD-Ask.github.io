@@ -1,9 +1,6 @@
 name: 🔗 无电子书-自动拉取-部署
 
 on:
-  push:
-  schedule:
-    - cron: '*/10 * * * *'
   workflow_dispatch: 
 # 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
 permissions:
