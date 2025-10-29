@@ -90,7 +90,7 @@ jobs:
       - name: 显示当前时区
         run: date
 
-      - name: 检出代码，使用当前提交的而非最新的子模块中所在分支的最新提交
+      - name: 检出代码，使用本地的子模块版本而非上游版本
         uses: actions/checkout@v5
         with:
           ref: main
