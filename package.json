@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "license": "BSD-3-Clause",
+  "license": "BSD-2-Clause",
   "dependencies": {
     "vitepress": "1.6.4",
 	"vite-plugin-vitepress-auto-nav": "3.0.0",
