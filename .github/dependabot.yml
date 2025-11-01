@@ -10,29 +10,30 @@ updates:
     schedule:
       interval: "daily"
 
-    # 允许合并多个依赖更新到一个 PR
+    # 启用安全更新
+    open-pull-requests-limit: 5
+    security-updates: true
+
+    # 将多个依赖更新合并为一个 PR
     groups:
       all-dependencies:
         patterns:
           - "*"
 
-    # 允许更新到 alpha、beta、rc 等预发布版本
+    # 允许 alpha/beta/rc 等预发布版本
+    versioning-strategy: increase
     allow:
       - dependency-type: "all"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-    versioning-strategy: increase
-    open-pull-requests-limit: 5
-    # 默认不更新预发布版本，需通过以下配置启用
-    # Dependabot 不直接支持“alpha”关键字过滤，
-    # 因此要通过版本策略允许预发布版本：
-    # “increase” 策略会允许从稳定版升至预发布版。
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+
+    # 启用安全更新
+    security-updates: true
+
+    # 合并多个 action 更新到一个 PR
     groups:
       actions:
         patterns:
