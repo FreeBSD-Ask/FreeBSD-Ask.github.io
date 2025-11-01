@@ -10,7 +10,8 @@
         "pagefind": "1.4.0",
         "vitepress-plugin-lightbox": "1.0.3",
         "noto-sans-sc": "37.0.0",
-        "lxgw-wenkai-screen-web": "1.521.0"
+        "lxgw-wenkai-screen-web": "1.521.0",
+        "vite-plugin-sri3": "1.1.0"
     },
     "trustedDependencies": [
         "vitepress-plugin-pagefind"
