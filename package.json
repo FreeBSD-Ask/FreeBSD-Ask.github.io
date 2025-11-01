@@ -13,8 +13,6 @@
         "lxgw-wenkai-screen-web": "1.521.0"
     },
     "trustedDependencies": [
-        "esbuild",
-        "vue-demi",
         "vitepress-plugin-pagefind"
     ],
     "scripts": {
