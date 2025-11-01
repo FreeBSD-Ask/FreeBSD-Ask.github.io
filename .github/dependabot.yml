@@ -21,8 +21,8 @@ updates:
     schedule:
       interval: "daily"
 
+    # 合并多个 actions 更新为一个 PR
     groups:
       actions:
         patterns:
           - "*"
-    versioning-strategy: increase
