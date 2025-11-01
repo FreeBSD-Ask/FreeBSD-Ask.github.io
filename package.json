@@ -15,7 +15,9 @@
         "vite-plugin-csp-guard": "3.0.0"
     },
     "trustedDependencies": [
-        "vitepress-plugin-pagefind"
+        "vitepress-plugin-pagefind",
+        "esbuild",
+		"vue-demi"
     ],
     "scripts": {
         "docs:dev": "vitepress dev docs",
