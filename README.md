@@ -14,11 +14,35 @@ gitbook.io（可以编辑、修改、创建目录和文本内容，与 GitHub �
 
 ## 本地测试
 
+### 安装 bun
+
+- MacOS/Linux
+
+```bash
+# curl -fsSL https://bun.com/install | bash
+```
+
+- Windows（powershell）
+
+```powershell
+# powershell -c "irm bun.sh/install.ps1|iex"
+```
+
+>**技巧**
+>
+>以管理员权限运行的 powershell 是不允许拖拽文件到命令行窗口的！
+
+如有变动，参见 [Install Bun](https://bun.com/docs/installation)。
+
+### 获取项目文件及结构
+
 打开 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>，点击“\< \>Code”，再在弹出窗口中点击“Download ZIP”，你的浏览器应该会自动开始下载 `FreeBSD-Ask-main.zip`。
 
 以相同的方式下载 <https://github.com/FreeBSD-Ask/FreeBSD-Ask.github.io>，即 `FreeBSD-Ask.github.io-main.zip`
 
 先把 `FreeBSD-Ask.github.io-main.zip` 提取（解压）到桌面上，即为 `FreeBSD-Ask.github.io-main`：
+
+#### `FreeBSD-Ask.github.io-main.zip` 的简要目录结构
 
 ```sh
 FreeBSD-Ask.github.io-main>
@@ -40,9 +64,12 @@ FreeBSD-Ask.github.io-main>
 |
 \---docs # 子模块目录，用于放置 FreeBSD-Ask，指向 FreeBSD-Ask main 分支特定版本的提交，通常是 main 上最新的提交。①
 ```
+#### 拉取子模块后 `FreeBSD-Ask.github.io-main.zip` 的完整目录结构
 
 再打开文件夹 `FreeBSD-Ask.github.io-main`，打开 `FreeBSD-Ask-main.zip`，点开 `FreeBSD-Ask-main`，按 `ctrl a` 全选文件夹 `FreeBSD-Ask-main` 里所有文件，将其放到文件夹 `FreeBSD-Ask.github.io-main` 中的目录 `docs` 中①。
 
+
+- 完整的目录结构
 
 ```sh
 FreeBSD-Ask.github.io-main>
@@ -128,3 +155,93 @@ FreeBSD-Ask.github.io-main>
     |       di-1.4-Fiat-Lux.md
     |       其他文件略
 ```
+
+### `package.json` 简要解释
+
+>**警告**
+>
+>json 中不允许注释！如果你直接复制粘贴，那么下面的 `#` 及后面的文字都将是非法字符！
+
+```json
+{
+    "type": "module", # 使用 ESM，起兼容作用
+    "license": "BSD-2-Clause", # 许可证
+    "dependencies": { # 主要依赖
+        "vitepress": "2.0.0-alpha.12", # vitepress 本体
+        "vite-plugin-vitepress-auto-nav": "3.0.0", # vitepress 侧边栏插件
+        "markdown-it-footnote": "4.0.0", # vitepress 脚注
+        "markdown-it-task-checkbox": "1.0.6", # vitepress 复选框
+        "vitepress-plugin-pagefind": "0.4.15", # vitepress 搜索
+        "pagefind": "1.4.0", # vitepress 搜索的依赖
+        "vitepress-plugin-lightbox": "1.0.3", # vitepress 图片点击放大功能
+        "noto-sans-sc": "37.0.0", # noto 字体
+        "lxgw-wenkai-screen-web": "1.521.0",  # 霞鹜文楷字体
+        "vite-plugin-sri3": "1.1.0", # SRT 合规
+        "vite-plugin-csp-guard": "3.0.0" # CSP 合规，目前因未知原因不生效。①
+    },
+    "trustedDependencies": [ # 信任依赖，即子依赖
+        "vitepress-plugin-pagefind", # vitepress 搜索
+        "esbuild", # sri3 或 csp 所需
+		"vue-demi" # sri3 或 csp 所需。②
+    ],
+    "scripts": { # 运行方法
+        "docs:dev": "vitepress dev docs",
+        "docs:build": "vitepress build docs && pagefind --site docs/.vitepress/dist",
+        "docs:preview": "vitepress preview docs" # ③
+    }
+}
+```
+
+>**警告**
+>
+>①、②、③ 每部分的末尾不允许有英文逗号，但是前面必须要个英文逗号！语法必须正确。不限制缩进格式。
+
+### 在浏览器安装缓存清除插件
+
+在测试中经常会收到缓存的干扰，十分有必要安装无缓存插件。
+
+- Chrome 在 [Cache Killer](https://chromewebstore.google.com/detail/cache-killer/mobkodffjnomdafehbljjphjaipbenpm)。
+- 火狐在 [Clear Cache](https://addons.mozilla.org/en-US/firefox/addon/clearcache/)。
+
+### 测试与运行
+
+定位到目录 `FreeBSD-Ask.github.io-main>`
+
+```sh
+C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun install # 根据 package.json 安装所需依赖
+bun install v1.3.1 (89fa0f34)
+warn: incorrect peer dependency "vitepress@2.0.0-alpha.12"
+
++ lxgw-wenkai-screen-web@1.521.0
++ markdown-it-footnote@4.0.0
++ markdown-it-task-checkbox@1.0.6
++ noto-sans-sc@37.0.0
++ pagefind@1.4.0
++ react@19.2.0
++ vite-plugin-csp-guard@3.0.0
++ vite-plugin-vitepress-auto-nav@3.0.0
++ vitepress@2.0.0-alpha.12
++ vitepress-plugin-lightbox@1.0.3
++ vitepress-plugin-pagefind@0.4.15
+
+189 packages installed [18.33s]
+
+C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun run vitepress dev docs  # 热加载运行
+🎈 SUMMARY 解析中...
+🎈 SUMMARY 解析完成...
+
+  vitepress v2.0.0-alpha.12
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+
+在网页打开 `http://localhost:5173` 即可。退出时关闭命令行窗口即可。
+
+### `package.json` 的变动处理 
+
+`bun install` 后，会在命令当前所在路径下生成文件夹 `node_modules`，通常在文件夹 `FreeBSD-Ask.github.io-main` 下。当 `package.json` 发生变动时，应删除文件夹 `node_modules`，然后再 `bun install`。
+
+
+
