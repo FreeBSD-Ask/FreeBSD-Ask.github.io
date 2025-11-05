@@ -255,7 +255,7 @@ C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun run docs:dev
 
 现在可以实时修改 `custom.css`，浏览器网页会自动刷新修改后的结果。同时在命令行窗口中，也会提示你的修改次数，形如 `x12`（变动了 12 次）。
 
-其他文件的变动，若修改后网页报错，请重新 `bun run vitepress dev docs`。
+其他文件的变动，若修改后网页报错，请重新 `bun run docs:dev`。
 
 ### `package.json` 的变动处理 
 
