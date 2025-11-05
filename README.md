@@ -180,7 +180,7 @@ FreeBSD-Ask.github.io-main>
         "vitepress-plugin-lightbox": "1.0.3", # vitepress 图片点击放大功能
         "noto-sans-sc": "37.0.0", # noto 字体
         "lxgw-wenkai-screen-web": "1.521.0",  # 霞鹜文楷字体
-        "vite-plugin-sri3": "1.1.0", # SRT 合规
+        "vite-plugin-sri3": "1.1.0", # SRI 合规
         "vite-plugin-csp-guard": "3.0.0" # CSP 合规，目前因未知原因不生效。①
     },
     "trustedDependencies": [ # 信任依赖，即子依赖
