@@ -205,10 +205,12 @@ FreeBSD-Ask.github.io-main>
 
 ### 测试与运行
 
-定位到目录 `FreeBSD-Ask.github.io-main>`
+定位到目录 `FreeBSD-Ask.github.io-main`
 
+-  根据 `package.json` 安装所需依赖
+  
 ```sh
-C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun install # 根据 package.json 安装所需依赖
+C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun install
 bun install v1.3.1 (89fa0f34)
 warn: incorrect peer dependency "vitepress@2.0.0-alpha.12"
 
@@ -225,8 +227,12 @@ warn: incorrect peer dependency "vitepress@2.0.0-alpha.12"
 + vitepress-plugin-pagefind@0.4.15
 
 189 packages installed [18.33s]
+```
 
-C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun run vitepress dev docs  # 热加载运行
+- 热加载运行
+
+```sh
+C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun run docs:dev 
 🎈 SUMMARY 解析中...
 🎈 SUMMARY 解析完成...
 
@@ -239,9 +245,23 @@ C:\Users\ykla\Desktop\FreeBSD-Ask.github.io-main>bun run vitepress dev docs  # �
 
 在网页打开 `http://localhost:5173` 即可。退出时关闭命令行窗口即可。
 
+>**技巧**
+>
+>如果报错 404，是正常的，点击导航栏的“目录”即可！不要尝试自己生成 `index.md`，有可能影响构建！
+
+现在可以实时修改 `custom.css`，浏览器网页会自动刷新修改后的结果。同时在命令行窗口中，也会提示你的修改次数，形如 `x12`（变动了 12 次）。
+
+其他文件的变动，若修改后网页报错，请重新 `bun run vitepress dev docs`。
+
 ### `package.json` 的变动处理 
 
 `bun install` 后，会在命令当前所在路径下生成文件夹 `node_modules`，通常在文件夹 `FreeBSD-Ask.github.io-main` 下。当 `package.json` 发生变动时，应删除文件夹 `node_modules`，然后再 `bun install`。
 
+### 修改后完整构建测试
 
+在测试完成后，应进行一次完整的构建测试。
+
+```sh
+# bun run docs:build
+```
 
