@@ -47,7 +47,7 @@ gitbook.io（可以编辑、修改、创建目录和文本内容，与 GitHub �
 ```sh
 FreeBSD-Ask.github.io-main>
 |   .gitattributes # 用于让 github 正确识别 markdown，用于在 github 正确高亮，正确显示编程语言（Languages）的统计信息
-|   .gitignore # 一些规则，用于让阻止 git 上传特定类型的文件或目录，如 node_modules
+|   .gitignore # 一些规则，用于阻止 git 上传特定类型的文件或目录，如 node_modules
 |   .gitmodules # 子模块，制定上游为 FreeBSD-Ask/FreeBSD-Ask
 |   LICENSE # 许可证
 |   package.json # 适用于 bun 的 package.json，里面指定了包管理器要安装的软件及版本限制
