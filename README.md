@@ -154,6 +154,10 @@ FreeBSD-Ask.github.io-main>
     |       di-1.3-jie-freebsd-jian-shi.md
     |       di-1.4-Fiat-Lux.md
     |       其他文件略
+    +---public # 放置网站的静态文件
+    |       favicon.ico # 会生成形如 docs.bsdcn.org/favicon.ico 的访问路径
+    |       其他文件从略
+
 ```
 
 ### `package.json` 简要解释
