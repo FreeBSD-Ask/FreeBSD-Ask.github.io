@@ -36,9 +36,8 @@ gitbook.io（可以编辑、修改、创建目录和文本内容，与 GitHub �
 
 ### 获取项目文件及结构
 
-打开 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>，点击“\< \>Code”，再在弹出窗口中点击“Download ZIP”，你的浏览器应该会自动开始下载 `FreeBSD-Ask-main.zip`。
 
-以相同的方式下载 <https://github.com/FreeBSD-Ask/FreeBSD-Ask.github.io>，即 `FreeBSD-Ask.github.io-main.zip`
+打开 <https://github.com/FreeBSD-Ask/FreeBSD-Ask.github.io>，点击“\< \>Code”，再在弹出窗口中点击“Download ZIP”，你的浏览器应该会自动开始下载 `FreeBSD-Ask.github.io-main.zip`。
 
 先把 `FreeBSD-Ask.github.io-main.zip` 提取（解压）到桌面上，即为 `FreeBSD-Ask.github.io-main`：
 
@@ -66,7 +65,9 @@ FreeBSD-Ask.github.io-main>
 ```
 #### 拉取子模块后 `FreeBSD-Ask.github.io-main.zip` 的完整目录结构
 
-再打开文件夹 `FreeBSD-Ask.github.io-main`，打开 `FreeBSD-Ask-main.zip`，点开 `FreeBSD-Ask-main`，按 `ctrl a` 全选文件夹 `FreeBSD-Ask-main` 里所有文件，将其放到文件夹 `FreeBSD-Ask.github.io-main` 中的目录 `docs` 中①。
+以相同的方式下载 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>，即 `FreeBSD-Ask-main.zip`。
+
+再打开文件夹 `FreeBSD-Ask.github.io-main`，打开 `FreeBSD-Ask-main.zip`，点开 `FreeBSD-Ask-main`，按 `ctrl a` 全选压缩文件目录内的 **文件夹** `FreeBSD-Ask-main` 中的所有文件，将其放到文件夹 `FreeBSD-Ask.github.io-main` 中的目录 `docs` 中①。
 
 
 - 完整的目录结构
