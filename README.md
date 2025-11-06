@@ -67,7 +67,7 @@ FreeBSD-Ask.github.io-main>
 
 以相同的方式下载 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>，即 `FreeBSD-Ask-main.zip`。
 
-再打开文件夹 `FreeBSD-Ask.github.io-main`，打开 `FreeBSD-Ask-main.zip`，点开 `FreeBSD-Ask-main`，按 `ctrl a` 全选压缩文件目录内的 **文件夹** `FreeBSD-Ask-main` 中的所有文件，将其放到文件夹 `FreeBSD-Ask.github.io-main` 中的目录 `docs` 中①。
+再打开文件夹 `FreeBSD-Ask.github.io-main`，打开 `FreeBSD-Ask-main.zip`，点开 `FreeBSD-Ask-main`，按 `ctrl a` 全选压缩文件目录内的 **文件夹** `FreeBSD-Ask-main` **里面** 的所有文件，将其放到文件夹 `FreeBSD-Ask.github.io-main` 中的目录 `docs` 中①。
 
 
 - 完整的目录结构
