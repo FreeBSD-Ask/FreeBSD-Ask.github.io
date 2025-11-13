@@ -4,6 +4,8 @@
 
 ![GitHub package.json prod dependency version](https://img.shields.io/github/package-json/dependency-version/FreeBSD-Ask/FreeBSD-Ask.github.io/vitepress)
 
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/FreeBSD-Ask/FreeBSD-Ask.github.io/main?display_timestamp=committer&style=flat-square&label=%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4)
+
 
 ---
 
