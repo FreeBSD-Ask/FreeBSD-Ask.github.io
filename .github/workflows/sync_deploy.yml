@@ -31,7 +31,7 @@ jobs:
         run: date
 
       - name: 检出代码
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
    
@@ -84,7 +84,7 @@ jobs:
         run: date
 
       - name: 检出代码，使用本地的子模块版本而非上游版本
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
@@ -101,7 +101,7 @@ jobs:
           sudo apt-get install -y ttf-wqy-microhei ttf-wqy-zenhei fonts-noto-core fonts-noto-cjk  
 
       - name: 检出 gitbook-pdf-export 工具
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: FreeBSD-Ask/gitbook-pdf-export
           path: pdf-generator

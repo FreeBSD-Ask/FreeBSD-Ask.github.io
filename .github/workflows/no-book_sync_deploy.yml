@@ -28,7 +28,7 @@ jobs:
         run: date
 
       - name: 检出代码
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
    
@@ -86,7 +86,7 @@ jobs:
         run: date
 
       - name: 检出代码，使用本地的子模块版本而非上游版本
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
