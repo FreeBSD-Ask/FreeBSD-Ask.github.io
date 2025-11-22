@@ -6,7 +6,6 @@
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/FreeBSD-Ask/FreeBSD-Ask.github.io/main?display_timestamp=committer&style=flat-square&label=%E6%9C%80%E6%96%B0%E6%8F%90%E4%BA%A4)
 
-
 ---
 
 请勿直接向本项目的子模块提交任何 PR！若要提交，请转向子模块仓库 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>。
