@@ -2,7 +2,7 @@
     "type": "module",
     "license": "BSD-2-Clause",
     "dependencies": {
-        "vitepress": "2.0.0-alpha.14",
+        "vitepress": "2.0.0-alpha.15",
         "vite-plugin-vitepress-auto-nav": "3.0.0",
         "markdown-it-footnote": "4.0.0",
         "markdown-it-task-checkbox": "1.0.6",
