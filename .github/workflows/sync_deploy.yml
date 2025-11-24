@@ -90,11 +90,6 @@ jobs:
           fetch-depth: 0
           submodules: recursive
          
-      - name: 添加交换空间
-        uses: actionhippie/swap-space@v1
-        with:
-          size: 16G
-          
       - name: 安装字体
         run: |
           sudo apt-get update
