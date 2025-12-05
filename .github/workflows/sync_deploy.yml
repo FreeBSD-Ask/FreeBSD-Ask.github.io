@@ -98,6 +98,7 @@ jobs:
       - name: 检出 gitbook-pdf-export 工具
         uses: actions/checkout@v6
         with:
+          ref: main
           repository: FreeBSD-Ask/gitbook-pdf-export
           path: pdf-generator
           # 此时应位于 /pdf-generator
@@ -123,6 +124,8 @@ jobs:
           mv build/final.epub build/bsdbook.epub
           mv build/bsdbook.pdf ../docs/public
           mv build/bsdbook.epub ../docs/public
+          git clone https://github.com/FreeBSD-Ask/zfs-snap
+          cp zfs-snap/zfs.sh ../docs/public # 复制 zfs 管理器
         env:
           PYTHONPATH: ${{ github.workspace }}/pdf-generator    
           
