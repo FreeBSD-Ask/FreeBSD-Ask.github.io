@@ -67,6 +67,8 @@ jobs:
           mv build/final.epub build/bsdbook.epub
           mv build/bsdbook.pdf ../docs/public
           mv build/bsdbook.epub ../docs/public
+          git clone https://github.com/FreeBSD-Ask/zfs-snap
+          cp zfs-snap/zfs.sh ../docs/public # 复制 zfs 管理器
         env:
           PYTHONPATH: ${{ github.workspace }}/pdf-generator    
            
