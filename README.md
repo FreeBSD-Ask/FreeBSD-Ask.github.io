@@ -8,7 +8,9 @@
 
 ---
 
-请勿直接向本项目的子模块提交任何 PR！若要提交，请转向子模块仓库 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>。
+**请勿直接向本项目的子模块提交任何 PR！**
+
+若要提交，请转向子模块仓库 <https://github.com/FreeBSD-Ask/FreeBSD-Ask>。
 
 ![GitHub License](https://img.shields.io/github/license/FreeBSD-Ask/FreeBSD-Ask.github.io?style=plastic)
 
