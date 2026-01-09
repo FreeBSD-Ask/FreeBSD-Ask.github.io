@@ -1,6 +1,9 @@
 # 《FreeBSD 从入门到跑路》VitePress 框架
 
-镜像站点：<https://docs.bsdcn.org>
+镜像站点：
+
+- <https://doc.bsdcn.org>
+- <https://docs.bsdcn.org>
 
 ![GitHub package.json prod dependency version](https://img.shields.io/github/package-json/dependency-version/FreeBSD-Ask/FreeBSD-Ask.github.io/vitepress)
 
