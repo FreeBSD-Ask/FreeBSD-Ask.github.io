@@ -13,8 +13,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
-# 如果设置为 true 会造成提交成功但编译被取消且无法再次编译直至下一次提交
+  cancel-in-progress: false
+# 如果设置为 true 会造成提交成功但编译被取消且无法再次编译直至下一次提交，但是由于每次空提交都会定时启动，因此，必须为 flase
 
 jobs:
   sync:
