@@ -14,10 +14,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setting TimeZone to UTC+8
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Asia/Shanghai"
       - name: Show the timezone
         run: |
            date 
@@ -75,10 +71,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - name: Setting TimeZone to UTC+8
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Asia/Shanghai"
       - name: Show the timezone
         run: |
            date
