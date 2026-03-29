@@ -22,14 +22,6 @@ jobs:
     outputs:
       changes_made: ${{ steps.check_changes.outputs.changes_made }}
     steps:
-      - name: 设置时区为 UTC+8
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Asia/Shanghai"
-
-      - name: 显示当前时区
-        run: date
-
       - name: 检出代码
         uses: actions/checkout@v6
         with:
@@ -75,14 +67,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ needs.sync.outputs.changes_made == 'true' }}
     steps:
-      - name: 设置时区为 UTC+8
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Asia/Shanghai"
-
-      - name: 显示当前时区
-        run: date
-
       - name: 检出代码，使用本地的子模块版本而非上游版本
         uses: actions/checkout@v6
         with:
@@ -168,14 +152,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: 设置时区为 UTC+8
-        uses: szenius/set-timezone@v2.0
-        with:
-          timezoneLinux: "Asia/Shanghai"
-
-      - name: 显示当前时区
-        run: date
-
       - name: 部署到 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
