@@ -30,7 +30,7 @@ jobs:
         with:
           bun-version: latest
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: 生成首页
         run:  cp -a docs/README.md docs/index.md      
       - name: Install dependencies
