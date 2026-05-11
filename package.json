@@ -12,7 +12,8 @@
         "noto-sans-sc": "37.0.0",
         "lxgw-wenkai-screen-web": "1.522.0",
         "@giscus/vue": "3.1.1",
-		"vitepress-plugin-rss": "0.4.4"
+		"vitepress-plugin-rss": "0.4.4",
+		"markdown-it-mathjax3": "5.2.0"
     },
     "trustedDependencies": [
         "vitepress-plugin-pagefind",
