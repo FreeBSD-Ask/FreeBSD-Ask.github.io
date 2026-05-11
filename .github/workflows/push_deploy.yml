@@ -49,7 +49,7 @@ jobs:
           cache: 'pip'
       - name: 安装 Python 依赖
         run: |
-          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libpangocairo-1.0-0
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libpangocairo-1.0-0 fonts-wqy-microhei texlive-xetex texlive-lang-chinese
           pip install weasyprint mistune pygments EbookLib beautifulsoup4
           
       - name: 生成 PDF 文档
