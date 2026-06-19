@@ -20,7 +20,7 @@ jobs:
       changes_made: ${{ steps.check_changes.outputs.changes_made }}
     steps:
       - name: 检出代码
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
    
@@ -70,7 +70,7 @@ jobs:
     if: ${{ needs.sync.outputs.changes_made == 'true' }}
     steps:
       - name: 检出代码，使用本地的子模块版本而非上游版本
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
