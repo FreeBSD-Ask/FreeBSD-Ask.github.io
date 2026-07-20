@@ -43,7 +43,7 @@ jobs:
           # 此时应位于 /pdf-generator
           
       - name: 设置 Python 环境
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: '3.14'
           cache: 'pip'
